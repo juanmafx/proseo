@@ -1,0 +1,26 @@
+{
+  "name": "proseo",
+  "version": "2.0.0",
+  "description": "Static product page generator and auditor for schema.org microdata, SEO metadata, and security baselines.",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "bin": {
+    "proseo": "bin/proseo.mjs"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "build": "node bin/proseo.mjs build",
+    "build:check": "node bin/proseo.mjs build --check",
+    "audit:page": "node bin/proseo.mjs audit index.html",
+    "extract": "node bin/proseo.mjs extract index.html",
+    "test": "node --test \"tests/**/*.test.mjs\"",
+    "test:report": "node scripts/write-test-report.mjs",
+    "check": "npm run build:check && npm run audit:page && npm test"
+  },
+  "dependencies": {
+    "parse5": "8.1.1"
+  }
+}

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src &#39;none&#39;; style-src &#39;self&#39;; img-src &#39;self&#39;; base-uri &#39;none&#39;; form-action &#39;none&#39;; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proseo: Schema.org Microdata Product Page Reference</title>
+    <meta name="description" content="A reference product page with nested schema.org microdata, SEO metadata, and a strict security baseline, checked by an automated auditor.">
+    <meta name="robots" content="index, follow">
+    <meta name="color-scheme" content="light dark">
+    <link rel="canonical" href="https://juanmafx.github.io/proseo/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Proseo">
+    <meta property="og:title" content="Proseo: Schema.org Microdata Product Page Reference">
+    <meta property="og:description" content="A reference product page with nested schema.org microdata, SEO metadata, and a strict security baseline, checked by an automated auditor.">
+    <meta property="og:url" content="https://juanmafx.github.io/proseo/">
+    <link rel="stylesheet" href="assets/css/site.css">
+  </head>
+  <body itemscope itemtype="https://schema.org/WebPage">
+    <link itemprop="url" href="https://juanmafx.github.io/proseo/">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <header class="masthead">
+      <div class="shell">
+        <p class="masthead__eyebrow">Structured data reference</p>
+        <h1 itemprop="name">Proseo</h1>
+        <p class="masthead__tagline" itemprop="description">Product pages with schema.org microdata and SEO metadata built in.</p>
+        <nav aria-label="Primary">
+          <ul class="nav">
+            <li><a href="#products">Sample catalog</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://github.com/juanmafx/proseo">Source code</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="content" class="shell">
+      <section id="products" aria-labelledby="products-title" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
+        <h2 id="products-title" itemprop="name">Sample catalog</h2>
+        <meta itemprop="numberOfItems" content="2">
+        <p class="notice">These entries are sample data. Nothing is sold here, so the markup deliberately omits prices, ratings, and availability.</p>
+        <div class="product-grid">
+        <article class="product" id="samsung-galaxy" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="productID" content="samsung-galaxy">
+          <img class="product__image" itemprop="image" src="assets/images/smartphone.svg" alt="Line illustration of a smartphone" width="320" height="240" loading="eager" decoding="async">
+          <div class="product__body">
+            <h3 class="product__name" itemprop="name">Samsung Galaxy</h3>
+            <p itemprop="description">Sample entry for a smartphone product, showing how name, brand, category, and image map to schema.org properties.</p>
+            <dl class="product__facts">
+              <div>
+                <dt>Brand</dt>
+                <dd itemprop="brand" itemscope itemtype="https://schema.org/Brand"><span itemprop="name">Samsung</span></dd>
+              </div>
+              <div>
+                <dt>Category</dt>
+                <dd itemprop="category">Mobile phones</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+        <article class="product" id="samsung-j5-screen" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+          <meta itemprop="productID" content="samsung-j5-screen">
+          <img class="product__image" itemprop="image" src="assets/images/replacement-screen.svg" alt="Line illustration of a replacement phone screen" width="320" height="240" loading="lazy" decoding="async">
+          <div class="product__body">
+            <h3 class="product__name" itemprop="name">Samsung J5 Screen</h3>
+            <p itemprop="description">Sample entry for a replacement display, showing the same structured markup applied to a spare part.</p>
+            <dl class="product__facts">
+              <div>
+                <dt>Brand</dt>
+                <dd itemprop="brand" itemscope itemtype="https://schema.org/Brand"><span itemprop="name">Samsung</span></dd>
+              </div>
+              <div>
+                <dt>Category</dt>
+                <dd itemprop="category">Mobile phone replacement parts</dd>
+              </div>
+            </dl>
+          </div>
+        </article>
+        </div>
+      </section>
+      <section id="about" aria-labelledby="about-title">
+        <h2 id="about-title">About this page</h2>
+        <p>This page is generated from a validated JSON catalog. Every value is escaped at render time, and the same repository ships an auditor that checks the published HTML for SEO metadata, microdata integrity, and a security baseline.</p>
+        <ul class="checklist">
+          <li>Nested schema.org microdata: WebPage, ItemList, Product, and Brand</li>
+          <li>Canonical URL, description, and Open Graph metadata</li>
+          <li>No JavaScript, no third-party requests, and a restrictive Content Security Policy</li>
+        </ul>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="shell">
+        <p>Originally created in 2016, modernized in 2026.</p>
+        <p>Product and brand names belong to their respective owners. This project is not affiliated with them.</p>
+      </div>
+    </footer>
+  </body>
+</html>

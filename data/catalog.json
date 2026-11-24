@@ -1,0 +1,36 @@
+{
+  "site": {
+    "name": "Proseo",
+    "title": "Proseo: Schema.org Microdata Product Page Reference",
+    "tagline": "Product pages with schema.org microdata and SEO metadata built in.",
+    "description": "A reference product page with nested schema.org microdata, SEO metadata, and a strict security baseline, checked by an automated auditor.",
+    "canonicalUrl": "https://juanmafx.github.io/proseo/",
+    "repositoryUrl": "https://github.com/juanmafx/proseo",
+    "createdYear": 2016,
+    "modernizedYear": 2026
+  },
+  "products": [
+    {
+      "id": "samsung-galaxy",
+      "name": "Samsung Galaxy",
+      "brand": "Samsung",
+      "category": "Mobile phones",
+      "description": "Sample entry for a smartphone product, showing how name, brand, category, and image map to schema.org properties.",
+      "image": "assets/images/smartphone.svg",
+      "imageAlt": "Line illustration of a smartphone",
+      "imageWidth": 320,
+      "imageHeight": 240
+    },
+    {
+      "id": "samsung-j5-screen",
+      "name": "Samsung J5 Screen",
+      "brand": "Samsung",
+      "category": "Mobile phone replacement parts",
+      "description": "Sample entry for a replacement display, showing the same structured markup applied to a spare part.",
+      "image": "assets/images/replacement-screen.svg",
+      "imageAlt": "Line illustration of a replacement phone screen",
+      "imageWidth": 320,
+      "imageHeight": 240
+    }
+  ]
+}
