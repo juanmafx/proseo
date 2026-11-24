@@ -2,9 +2,17 @@
 
 This project follows [Semantic Versioning](https://semver.org). Revisions from 2016 were never versioned or tagged, so they are treated as the 1.x line.
 
+## [2.0.1] - 2026-11-24
+
+Documentation corrections only. No change to code behaviour or to the generated page.
+
+### Changed
+
+- Release notes, notice, and security audit now reflect the published 2.0.0 release and the 2026-11-24 rewrite of the public Git history, which no longer contains the 2016 revisions.
+
 ## [2.0.0] - 2026-11-24
 
-Prepared on `modernize/2026`. Not tagged or released yet.
+Released and published to GitHub Pages from `master`.
 
 ### Added
 

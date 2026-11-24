@@ -1,6 +1,6 @@
 # Notices
 
-The current tree contains no vendored third-party CSS or JavaScript. Earlier revisions, which remain in Git history, included the following work under its own license.
+The current tree contains no vendored third-party CSS or JavaScript. Earlier revisions, published from 2016 until the 2026 modernization, included the following work under its own license.
 
 | Component | Former path | Copyright | License |
 | --- | --- | --- | --- |

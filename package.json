@@ -1,6 +1,6 @@
 {
   "name": "proseo",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Static product page generator and auditor for schema.org microdata, SEO metadata, and security baselines.",
   "private": true,
   "license": "UNLICENSED",

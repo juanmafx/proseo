@@ -17,7 +17,7 @@
 | --- | --- |
 | `gitleaks` on history and tree | No leaks found |
 | Personal emails or phone numbers in tracked files | None found |
-| Personal email in commit metadata | Present in the author field of the six 2016 commits |
+| Personal email in commit metadata | Present in the author field of the six 2016 commits at audit time; removed from all branches and tags by the 2026-11-24 history rewrite |
 | `npm audit` | 0 known vulnerabilities on the audit date |
 | Content Security Policy violations in Chrome | None logged |
 | Requests made by the page in Chrome | Same-origin only |
@@ -50,5 +50,10 @@ The project has no contact form, login, session, server endpoint, or database co
 | --- | --- | --- |
 | Low | GitHub Pages does not allow custom response headers, so HSTS and `frame-ancestors` cannot be set by this repository | Accepted; the page has no state or actions to protect |
 | Low | Private vulnerability reporting is disabled for the repository | Owner decision |
-| Low | A personal email remains in the metadata of the public 2016 commits | Owner decision; removal requires a history rewrite |
-| Info | The superseded framework remains in Git history | Accepted; history is not rewritten and it is not served after merge |
+
+## Resolved after the audit
+
+| Severity | Item | Resolution |
+| --- | --- | --- |
+| Low | A personal email was in the metadata of the public 2016 commits | Resolved by the 2026-11-24 history rewrite: pre-2026 commits are no longer in any branch or tag. Old commits may remain reachable by direct SHA on GitHub until unreferenced objects are purged, so anything that was ever published should still be treated as exposed |
+| Info | The superseded framework remained in Git history | Resolved by the same history rewrite; it is no longer in any branch or tag and is not served by GitHub Pages |
