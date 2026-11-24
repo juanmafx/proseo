@@ -1,11 +1,17 @@
 import { parse } from 'parse5';
 
+const HTML_NAMESPACE = 'http://www.w3.org/1999/xhtml';
+
 export function parseDocument(html) {
   return parse(html, { sourceCodeLocationInfo: true });
 }
 
 export function isElement(node) {
   return typeof node.tagName === 'string';
+}
+
+export function isHtmlElement(node, tagName) {
+  return node.tagName === tagName && node.namespaceURI === HTML_NAMESPACE;
 }
 
 export function getAttribute(element, name) {
@@ -16,7 +22,11 @@ export function hasAttribute(element, name) {
   return getAttribute(element, name) !== undefined;
 }
 
-export function listElements(root) {
+export function tokenList(value) {
+  return (value ?? '').toLowerCase().split(/\s+/).filter(Boolean);
+}
+
+export function listElements(root, { includeTemplates = false } = {}) {
   const elements = [];
   const stack = [root];
   while (stack.length > 0) {
@@ -27,6 +37,9 @@ export function listElements(root) {
     const children = node.childNodes ?? [];
     for (let index = children.length - 1; index >= 0; index -= 1) {
       stack.push(children[index]);
+    }
+    if (includeTemplates && node.content) {
+      stack.push(node.content);
     }
   }
   return elements;
@@ -50,15 +63,4 @@ export function textContent(root) {
 
 export function lineOf(node) {
   return node.sourceCodeLocation?.startLine ?? null;
-}
-
-export function hasAncestorWithAttribute(element, name) {
-  let current = element.parentNode;
-  while (current) {
-    if (isElement(current) && hasAttribute(current, name)) {
-      return true;
-    }
-    current = current.parentNode;
-  }
-  return false;
 }

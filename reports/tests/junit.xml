@@ -1,115 +1,165 @@
 <?xml version="1.0" encoding="utf-8"?>
 <testsuites>
-	<testcase name="audit exits 0 for the published page" time="0.394377" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="audit emits parseable JSON" time="0.327017" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="audit exits 1 when errors exist" time="0.210282" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="extract prints nested microdata" time="0.255913" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="build --check passes on committed artifacts" time="0.321425" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="build --check detects stale artifacts in a copy" time="0.283903" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="rejects oversized input" time="0.224871" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="reports missing files without a stack trace" time="0.348097" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="exits 2 for usage: unknown" time="0.241730" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="exits 2 for usage: audit" time="0.216960" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="exits 2 for usage: extract" time="0.188638" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="exits 2 for usage: audit index.html --format xml" time="0.173828" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="exits 2 for usage: --nope" time="0.140990" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="exits 2 for usage: (none)" time="0.159863" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="help exits 0" time="0.146850" classname="test" file="./tests/integration/cli.test.mjs"/>
-	<testcase name="creates the expected tables and indexes" time="0.007650" classname="test" file="./tests/integration/schema.test.mjs"/>
-	<testcase name="applies idempotently" time="0.001557" classname="test" file="./tests/integration/schema.test.mjs"/>
-	<testcase name="cascades finding deletion with its run" time="0.005447" classname="test" file="./tests/integration/schema.test.mjs"/>
-	<testcase name="rejects unknown severities" time="0.008740" classname="test" file="./tests/integration/schema.test.mjs"/>
-	<testcase name="rejects findings without a run" time="0.001501" classname="test" file="./tests/integration/schema.test.mjs"/>
-	<testcase name="stores hostile text literally through bound parameters" time="0.005679" classname="test" file="./tests/integration/schema.test.mjs"/>
-	<testcase name="committed artifacts match the renderer" time="0.026926" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="published page has no audit findings" time="0.028753" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="every local asset exists" time="0.000684" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="every in-page anchor resolves" time="0.002708" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="page loads no scripts and no third-party resources" time="0.000704" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="stylesheet makes no external requests" time="0.000651" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="Content-Security-Policy is the first directive after charset" time="0.000349" classname="test" file="./tests/integration/site.test.mjs"/>
-	<testcase name="passes a clean page" time="0.021435" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags html-lang (case 1)" time="0.007133" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags title (case 2)" time="0.007516" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags meta-description (case 3)" time="0.002527" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags canonical (case 4)" time="0.005506" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags single-h1 (case 5)" time="0.001923" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags heading-order (case 6)" time="0.009590" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags img-alt (case 7)" time="0.002439" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags img-dimensions (case 8)" time="0.005855" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags unsafe-url-scheme (case 9)" time="0.007369" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags unsafe-url-scheme (case 10)" time="0.006167" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags unsafe-url-scheme (case 11)" time="0.006196" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags unsafe-url-scheme (case 12)" time="0.010454" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags link-target-rel (case 13)" time="0.001391" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags link-text (case 14)" time="0.001223" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags inline-handler (case 15)" time="0.008088" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags inline-script (case 16)" time="0.001694" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags insecure-resource (case 17)" time="0.007609" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags insecure-resource (case 18)" time="0.044929" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags subresource-integrity (case 19)" time="0.002796" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags subresource-integrity (case 20)" time="0.006676" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags microdata-present (case 21)" time="0.000795" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags microdata-orphan-property (case 22)" time="0.011805" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags microdata-itemref (case 23)" time="0.000982" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags microdata-itemtype (case 24)" time="0.006538" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags microdata-itemtype (case 25)" time="0.000839" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags microdata-itemtype-https (case 26)" time="0.001617" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags product-name (case 27)" time="0.005530" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags product-recommended (case 28)" time="0.001402" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags a missing Content-Security-Policy" time="0.000914" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags an unsafe Content-Security-Policy" time="0.005643" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags missing title, description, and canonical" time="0.000390" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags out-of-range title and description lengths" time="0.003717" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags an insecure canonical URL" time="0.003849" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="flags items nested beyond the depth limit" time="0.018685" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="allows JSON-LD data blocks" time="0.000686" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="allows external scripts with integrity" time="0.000583" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="counts errors and warnings separately" time="0.001872" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="reports source line numbers" time="0.003247" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="audits deeply nested markup without overflowing the stack" time="0.516494" classname="test" file="./tests/unit/audit.test.mjs"/>
-	<testcase name="accepts a valid catalog" time="0.008910" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects non-object catalogs" time="0.000957" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects an empty product list" time="0.000690" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects a missing site" time="0.000528" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects unsafe image path ../secret.svg" time="0.004271" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects unsafe image path /etc/passwd" time="0.001110" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects unsafe image path https://example.test/a.svg" time="0.001978" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects unsafe image path assets/images/a.svg?x=1" time="0.000443" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects unsafe image path assets/images/../a.svg" time="0.002647" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects canonical URL http://example.test/" time="0.002229" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects canonical URL javascript:alert(1)" time="0.003132" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects canonical URL not a url" time="0.000314" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects canonical URL https://user:pass@example.test/" time="0.001800" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects duplicate product ids" time="0.000516" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects ids that are not slugs" time="0.000698" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects control characters in text" time="0.002333" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects out-of-range title lengths" time="0.000357" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects invalid image dimensions" time="0.001533" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="rejects a modernization year before creation" time="0.001180" classname="test" file="./tests/unit/catalog.test.mjs"/>
-	<testcase name="escapes every HTML-significant character" time="0.002250" classname="test" file="./tests/unit/escape.test.mjs"/>
-	<testcase name="escapes ampersands exactly once" time="0.000321" classname="test" file="./tests/unit/escape.test.mjs"/>
-	<testcase name="converts non-string values to text" time="0.000278" classname="test" file="./tests/unit/escape.test.mjs"/>
-	<testcase name="reads values from element-specific attributes" time="0.033587" classname="test" file="./tests/unit/microdata.test.mjs"/>
-	<testcase name="assigns multiple property names from one element" time="0.001366" classname="test" file="./tests/unit/microdata.test.mjs"/>
-	<testcase name="collects repeated properties in document order" time="0.001803" classname="test" file="./tests/unit/microdata.test.mjs"/>
-	<testcase name="keeps nested item properties out of the parent" time="0.001607" classname="test" file="./tests/unit/microdata.test.mjs"/>
+	<testcase name="audit exits 0 for the published page" time="0.229270" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="audit emits parseable JSON" time="0.213567" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="audit exits 1 when errors exist" time="0.280357" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="extract prints nested microdata" time="0.281960" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="build --check passes on committed artifacts" time="0.176530" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="build --check detects stale artifacts in a copy" time="0.157066" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="rejects oversized input" time="0.163530" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="reports missing files without a stack trace" time="0.209657" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="exits 2 for usage: unknown" time="0.147191" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="exits 2 for usage: audit" time="0.130933" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="exits 2 for usage: extract" time="0.140571" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="exits 2 for usage: audit index.html --format xml" time="0.169135" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="exits 2 for usage: --nope" time="0.171988" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="exits 2 for usage: (none)" time="0.295810" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="help exits 0" time="0.109154" classname="test" file="./tests/integration/cli.test.mjs"/>
+	<testcase name="rejects unbounded character devices" time="0.212944" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects named pipes without blocking" time="0.285387" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects directories" time="0.156242" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="reports a crafted microdata file without crashing" time="0.218647" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="reports malformed catalog JSON as invalid input" time="0.181636" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects a catalog image that does not exist" time="0.197968" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects a C1 control in catalog text" time="0.002054" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects a right-to-left override in catalog text" time="0.003625" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects a bidi isolate in catalog text" time="0.002747" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="rejects a line separator in catalog text" time="0.000600" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="exits cleanly when the output pipe closes early" time="0.202713" classname="test" file="./tests/integration/hostile-input.test.mjs"/>
+	<testcase name="creates the expected tables and indexes" time="0.010998" classname="test" file="./tests/integration/schema.test.mjs"/>
+	<testcase name="applies idempotently" time="0.004609" classname="test" file="./tests/integration/schema.test.mjs"/>
+	<testcase name="cascades finding deletion with its run" time="0.001605" classname="test" file="./tests/integration/schema.test.mjs"/>
+	<testcase name="rejects unknown severities" time="0.005426" classname="test" file="./tests/integration/schema.test.mjs"/>
+	<testcase name="rejects findings without a run" time="0.002726" classname="test" file="./tests/integration/schema.test.mjs"/>
+	<testcase name="stores hostile text literally through bound parameters" time="0.001250" classname="test" file="./tests/integration/schema.test.mjs"/>
+	<testcase name="committed artifacts match the renderer" time="0.035748" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="published page has no audit findings" time="0.047625" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="every local asset exists" time="0.001067" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="every in-page anchor resolves" time="0.000756" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="page loads no scripts and no third-party resources" time="0.000677" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="stylesheet makes no external requests" time="0.000670" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="Content-Security-Policy is the first directive after charset" time="0.000327" classname="test" file="./tests/integration/site.test.mjs"/>
+	<testcase name="passes a clean page" time="0.041420" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags html-lang (case 1)" time="0.011455" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags title (case 2)" time="0.010780" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags meta-description (case 3)" time="0.002949" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags canonical (case 4)" time="0.010031" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags single-h1 (case 5)" time="0.009107" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags heading-order (case 6)" time="0.001840" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags img-alt (case 7)" time="0.002085" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags img-dimensions (case 8)" time="0.003177" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme (case 9)" time="0.002599" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme (case 10)" time="0.001681" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme (case 11)" time="0.001974" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme (case 12)" time="0.002478" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags link-target-rel (case 13)" time="0.001983" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags link-text (case 14)" time="0.002234" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags inline-handler (case 15)" time="0.001757" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags inline-script (case 16)" time="0.006878" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags insecure-resource (case 17)" time="0.008199" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags insecure-resource (case 18)" time="0.037454" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags subresource-integrity (case 19)" time="0.002982" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags subresource-integrity (case 20)" time="0.003673" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags microdata-present (case 21)" time="0.006144" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags microdata-orphan-property (case 22)" time="0.002175" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags microdata-itemref (case 23)" time="0.012905" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags microdata-itemtype (case 24)" time="0.001514" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags microdata-itemtype (case 25)" time="0.001807" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags microdata-itemtype-https (case 26)" time="0.003922" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags product-name (case 27)" time="0.003375" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags product-recommended (case 28)" time="0.004986" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags a missing Content-Security-Policy" time="0.002266" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags an unsafe Content-Security-Policy" time="0.003553" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags missing title, description, and canonical" time="0.000385" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags out-of-range title and description lengths" time="0.006069" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags an insecure canonical URL" time="0.001755" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="flags items nested beyond the depth limit" time="0.011010" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="allows JSON-LD data blocks" time="0.000979" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="allows external scripts with integrity" time="0.000615" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="counts errors and warnings separately" time="0.000702" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="reports source line numbers" time="0.000735" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="audits deeply nested markup without overflowing the stack" time="0.548189" classname="test" file="./tests/unit/audit.test.mjs"/>
+	<testcase name="accepts a valid catalog" time="0.003768" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects non-object catalogs" time="0.000935" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects an empty product list" time="0.000904" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects a missing site" time="0.000529" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects unsafe image path ../secret.svg" time="0.000648" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects unsafe image path /etc/passwd" time="0.000958" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects unsafe image path https://example.test/a.svg" time="0.000494" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects unsafe image path assets/images/a.svg?x=1" time="0.000369" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects unsafe image path assets/images/../a.svg" time="0.001011" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects canonical URL http://example.test/" time="0.001103" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects canonical URL javascript:alert(1)" time="0.000710" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects canonical URL not a url" time="0.000371" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects canonical URL https://user:pass@example.test/" time="0.000277" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects duplicate product ids" time="0.000303" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects ids that are not slugs" time="0.000613" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects control characters in text" time="0.000764" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects out-of-range title lengths" time="0.000326" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects invalid image dimensions" time="0.000955" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="rejects a modernization year before creation" time="0.002735" classname="test" file="./tests/unit/catalog.test.mjs"/>
+	<testcase name="escapes every HTML-significant character" time="0.001917" classname="test" file="./tests/unit/escape.test.mjs"/>
+	<testcase name="escapes ampersands exactly once" time="0.000304" classname="test" file="./tests/unit/escape.test.mjs"/>
+	<testcase name="converts non-string values to text" time="0.000289" classname="test" file="./tests/unit/escape.test.mjs"/>
+	<testcase name="stores the property name constructor without touching prototypes" time="0.017579" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="stores the property name __proto__ without touching prototypes" time="0.001348" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="stores the property name toString without touching prototypes" time="0.001073" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="stores the property name hasOwnProperty without touching prototypes" time="0.000863" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="collapses duplicate property tokens on one element" time="0.001710" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="bounds exponential expansion from multi-token nested properties" time="0.705607" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="bounds quadratic text extraction from nested properties" time="2.696968" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="handles very wide elements without exceeding the call stack" time="0.398556" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="checks deeply nested orphan properties in linear time" time="0.546193" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="checks nested SVG anchors in linear time" time="0.623964" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="caps reported findings and keeps exact totals" time="0.010567" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags inline-script in hostile markup (case 1)" time="0.002784" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags inline-handler in hostile markup (case 2)" time="0.001335" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags iframe-srcdoc in hostile markup (case 3)" time="0.001370" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 4)" time="0.000952" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 5)" time="0.001313" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 6)" time="0.000961" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 7)" time="0.001132" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 8)" time="0.000765" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 9)" time="0.001250" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-url-scheme in hostile markup (case 10)" time="0.001112" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags subresource-integrity in hostile markup (case 11)" time="0.000935" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags insecure-resource in hostile markup (case 12)" time="0.000771" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags insecure-resource in hostile markup (case 13)" time="0.000753" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags insecure-resource in hostile markup (case 14)" time="0.000713" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags a policy that does not restrict scripts: (empty)" time="0.000777" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags a policy that does not restrict scripts: img-src *" time="0.000692" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags a policy that does not restrict scripts: default-src *" time="0.000727" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags a policy that does not restrict scripts: script-src https:" time="0.000625" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags a policy that does not restrict scripts: default-src 'none'; script-src-elem *" time="0.000919" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="flags unsafe-hashes in a policy" time="0.000725" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="ignores a policy placed outside head" time="0.000805" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="does not raise title for valid markup (case 1)" time="0.000854" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="does not raise link-text for valid markup (case 2)" time="0.000878" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="does not raise link-text for valid markup (case 3)" time="0.000738" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="does not raise link-target-rel for valid markup (case 4)" time="0.001051" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="does not raise microdata-orphan-property for valid markup (case 5)" time="0.000891" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="does not raise unsafe-url-scheme for valid markup (case 6)" time="0.000762" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="recognizes a canonical link with multiple rel tokens" time="0.000906" classname="test" file="./tests/unit/hostile-markup.test.mjs"/>
+	<testcase name="reads values from element-specific attributes" time="0.017891" classname="test" file="./tests/unit/microdata.test.mjs"/>
+	<testcase name="assigns multiple property names from one element" time="0.001535" classname="test" file="./tests/unit/microdata.test.mjs"/>
+	<testcase name="collects repeated properties in document order" time="0.001910" classname="test" file="./tests/unit/microdata.test.mjs"/>
+	<testcase name="keeps nested item properties out of the parent" time="0.001627" classname="test" file="./tests/unit/microdata.test.mjs"/>
 	<testcase name="treats sibling top-level scopes as separate items" time="0.000654" classname="test" file="./tests/unit/microdata.test.mjs"/>
-	<testcase name="flattens nested items" time="0.000968" classname="test" file="./tests/unit/microdata.test.mjs"/>
-	<testcase name="truncates pathological nesting without overflowing the stack" time="0.038858" classname="test" file="./tests/unit/microdata.test.mjs"/>
-	<testcase name="renders a page with no audit errors or warnings" time="0.042809" classname="test" file="./tests/unit/render.test.mjs"/>
-	<testcase name="neutralizes markup injected through catalog text" time="0.014544" classname="test" file="./tests/unit/render.test.mjs"/>
-	<testcase name="preserves injected text as a literal microdata value" time="0.010865" classname="test" file="./tests/unit/render.test.mjs"/>
-	<testcase name="nests WebPage, ItemList, Product, and Brand" time="0.010257" classname="test" file="./tests/unit/render.test.mjs"/>
-	<testcase name="omits commercial claims from the markup" time="0.003436" classname="test" file="./tests/unit/render.test.mjs"/>
-	<testcase name="states the project history" time="0.000552" classname="test" file="./tests/unit/render.test.mjs"/>
-	<testcase name="escapes sitemap URLs" time="0.002545" classname="test" file="./tests/unit/render.test.mjs"/>
-	<!-- tests 104 -->
+	<testcase name="flattens nested items" time="0.001238" classname="test" file="./tests/unit/microdata.test.mjs"/>
+	<testcase name="truncates pathological nesting without overflowing the stack" time="0.020857" classname="test" file="./tests/unit/microdata.test.mjs"/>
+	<testcase name="renders a page with no audit errors or warnings" time="0.055585" classname="test" file="./tests/unit/render.test.mjs"/>
+	<testcase name="neutralizes markup injected through catalog text" time="0.023812" classname="test" file="./tests/unit/render.test.mjs"/>
+	<testcase name="preserves injected text as a literal microdata value" time="0.008175" classname="test" file="./tests/unit/render.test.mjs"/>
+	<testcase name="nests WebPage, ItemList, Product, and Brand" time="0.010753" classname="test" file="./tests/unit/render.test.mjs"/>
+	<testcase name="omits commercial claims from the markup" time="0.000587" classname="test" file="./tests/unit/render.test.mjs"/>
+	<testcase name="states the project history" time="0.000565" classname="test" file="./tests/unit/render.test.mjs"/>
+	<testcase name="escapes sitemap URLs" time="0.000381" classname="test" file="./tests/unit/render.test.mjs"/>
+	<!-- tests 154 -->
 	<!-- suites 0 -->
-	<!-- pass 104 -->
+	<!-- pass 154 -->
 	<!-- fail 0 -->
 	<!-- cancelled 0 -->
 	<!-- skipped 0 -->
 	<!-- todo 0 -->
-	<!-- duration_ms 4064.115591 -->
+	<!-- duration_ms 5598.957726 -->
 </testsuites>

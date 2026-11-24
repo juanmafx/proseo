@@ -1,4 +1,4 @@
-import { getAttribute, textContent } from '../../html/tree.mjs';
+import { getAttribute, isHtmlElement, textContent, tokenList } from '../../html/tree.mjs';
 import { finding } from '../finding.mjs';
 
 const TITLE_RANGE = { min: 30, max: 60 };
@@ -19,7 +19,7 @@ function checkLength(rule, label, value, range, node) {
 }
 
 function checkTitle({ elements }) {
-  const titles = elements.filter((element) => element.tagName === 'title');
+  const titles = elements.filter((element) => isHtmlElement(element, 'title'));
   if (titles.length !== 1) {
     return [finding('title', 'error', `Expected one title, found ${titles.length}`, titles[1])];
   }
@@ -39,7 +39,7 @@ function checkDescription({ elements }) {
 
 function checkCanonical({ elements }) {
   const canonicals = elements.filter(
-    (element) => element.tagName === 'link' && getAttribute(element, 'rel')?.toLowerCase() === 'canonical',
+    (element) => element.tagName === 'link' && tokenList(getAttribute(element, 'rel')).includes('canonical'),
   );
   if (canonicals.length !== 1) {
     return [finding('canonical', 'error', `Expected one canonical link, found ${canonicals.length}`, canonicals[1])];

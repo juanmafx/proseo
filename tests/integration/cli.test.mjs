@@ -45,7 +45,7 @@ test('build --check passes on committed artifacts', () => {
 
 test('build --check detects stale artifacts in a copy', () => {
   const copy = join(scratch, 'copy');
-  for (const entry of ['bin', 'src', 'data', 'index.html', 'sitemap.xml', 'package.json']) {
+  for (const entry of ['bin', 'src', 'data', 'assets', 'index.html', 'sitemap.xml', 'package.json']) {
     cpSync(join(root, entry), join(copy, entry), { recursive: true });
   }
   cpSync(join(root, 'node_modules'), join(copy, 'node_modules'), { recursive: true });

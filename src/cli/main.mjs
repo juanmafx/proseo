@@ -1,3 +1,4 @@
+import { constants } from 'node:fs';
 import { open } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
@@ -18,16 +19,30 @@ const USAGE = `Usage:
   proseo help
 `;
 
+const READ_ERROR_CODES = new Set(['ENOENT', 'EISDIR', 'EACCES', 'EPERM', 'ELOOP', 'ENOTDIR', 'ENXIO', 'ENAMETOOLONG']);
+
 class UsageError extends Error {}
 
 async function readBoundedFile(path) {
-  const handle = await open(path, 'r');
+  const handle = await open(path, constants.O_RDONLY | constants.O_NONBLOCK);
   try {
-    const { size } = await handle.stat();
-    if (size > MAX_INPUT_BYTES) {
+    const stats = await handle.stat();
+    if (!stats.isFile()) {
+      throw new UsageError('Input must be a regular file');
+    }
+    const buffer = Buffer.alloc(Math.min(stats.size, MAX_INPUT_BYTES) + 1);
+    let length = 0;
+    while (length < buffer.length) {
+      const { bytesRead } = await handle.read(buffer, length, buffer.length - length, null);
+      if (bytesRead === 0) {
+        break;
+      }
+      length += bytesRead;
+    }
+    if (length > MAX_INPUT_BYTES) {
       throw new UsageError(`Input exceeds the ${MAX_INPUT_BYTES} byte limit`);
     }
-    return await handle.readFile('utf8');
+    return buffer.toString('utf8', 0, length);
   } finally {
     await handle.close();
   }
@@ -52,6 +67,9 @@ function formatReport(report) {
   const lines = report.findings.map(
     ({ severity, rule, message, line }) => `${severity.padEnd(7)} ${rule} (line ${line ?? '-'}): ${message}`,
   );
+  if (report.omittedFindings > 0) {
+    lines.push(`${report.omittedFindings} more findings omitted`);
+  }
   lines.push(`${report.errors} errors, ${report.warnings} warnings, ${report.items} top-level items`);
   return `${lines.join('\n')}\n`;
 }
@@ -107,7 +125,7 @@ export async function run(argv, overrides = {}) {
       io.stderr.write(`${error.message}\n${error instanceof CatalogError ? '' : USAGE}`);
       return EXIT.usage;
     }
-    if (error.code === 'ENOENT' || error.code === 'EISDIR' || error.code === 'EACCES') {
+    if (READ_ERROR_CODES.has(error.code)) {
       io.stderr.write(`Cannot read input: ${error.code}\n`);
       return EXIT.usage;
     }

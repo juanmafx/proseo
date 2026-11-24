@@ -4,7 +4,7 @@ export function renderProduct(product, position) {
   const loading = position === 0 ? 'eager' : 'lazy';
   return `        <article class="product" id="${e(product.id)}" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
           <meta itemprop="productID" content="${e(product.id)}">
-          <img class="product__image" itemprop="image" src="${e(product.image)}" alt="${e(product.imageAlt)}" width="${product.imageWidth}" height="${product.imageHeight}" loading="${loading}" decoding="async">
+          <img class="product__image" itemprop="image" src="${e(product.image)}" alt="${e(product.imageAlt)}" width="${e(product.imageWidth)}" height="${e(product.imageHeight)}" loading="${loading}" decoding="async">
           <div class="product__body">
             <h3 class="product__name" itemprop="name">${e(product.name)}</h3>
             <p itemprop="description">${e(product.description)}</p>

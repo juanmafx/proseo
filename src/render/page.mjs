@@ -45,7 +45,7 @@ export function renderPage({ site, products }) {
     <main id="content" class="shell">
       <section id="products" aria-labelledby="products-title" itemprop="mainEntity" itemscope itemtype="https://schema.org/ItemList">
         <h2 id="products-title" itemprop="name">Sample catalog</h2>
-        <meta itemprop="numberOfItems" content="${products.length}">
+        <meta itemprop="numberOfItems" content="${e(products.length)}">
         <p class="notice">These entries are sample data. Nothing is sold here, so the markup deliberately omits prices, ratings, and availability.</p>
         <div class="product-grid">
 ${productMarkup}
@@ -63,7 +63,7 @@ ${productMarkup}
     </main>
     <footer class="site-footer">
       <div class="shell">
-        <p>Originally created in ${site.createdYear}, modernized in ${site.modernizedYear}.</p>
+        <p>Originally created in ${e(site.createdYear)}, modernized in ${e(site.modernizedYear)}.</p>
         <p>Product and brand names belong to their respective owners. This project is not affiliated with them.</p>
       </div>
     </footer>

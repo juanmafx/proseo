@@ -15,9 +15,9 @@ Reports are handled on a best-effort basis, as this is a personal project with n
 
 ## Security model
 
-- The published site is static, with no JavaScript, forms, cookies, accounts, or server code.
+- The generated page is static, with no JavaScript, forms, cookies, accounts, or server code.
 - Catalog values are validated at build time and escaped at render time.
-- The auditor treats input as untrusted, with a size limit and bounded traversal.
+- The auditor treats input as untrusted: it accepts regular files up to 5 MiB, walks trees iteratively, and limits microdata extraction by depth, values, characters, and node visits.
 - CI uses read-only permissions, commit-pinned actions, a lockfile, and disabled lifecycle scripts.
 
 See [docs/SECURITY_AUDIT.md](docs/SECURITY_AUDIT.md) for the latest review.

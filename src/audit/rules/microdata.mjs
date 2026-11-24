@@ -1,4 +1,4 @@
-import { getAttribute, hasAncestorWithAttribute, hasAttribute } from '../../html/tree.mjs';
+import { getAttribute, hasAttribute } from '../../html/tree.mjs';
 import { flattenItems, MAX_ITEM_DEPTH } from '../../microdata/extract.mjs';
 import { finding } from '../finding.mjs';
 
@@ -13,10 +13,26 @@ function checkPresence({ items }) {
   return items.length > 0 ? [] : [finding('microdata-present', 'warning', 'No microdata items found')];
 }
 
+function referencedIds(elements) {
+  const ids = new Set();
+  for (const element of elements) {
+    for (const id of (getAttribute(element, 'itemref') ?? '').split(/\s+/).filter(Boolean)) {
+      ids.add(id);
+    }
+  }
+  return ids;
+}
+
 function checkAttributes({ elements }) {
   const results = [];
+  const referenced = referencedIds(elements);
+  const scoped = new Set();
   for (const element of elements) {
-    if (hasAttribute(element, 'itemprop') && !hasAncestorWithAttribute(element, 'itemscope')) {
+    const covered = scoped.has(element.parentNode) || referenced.has(getAttribute(element, 'id'));
+    if (covered || hasAttribute(element, 'itemscope')) {
+      scoped.add(element);
+    }
+    if (hasAttribute(element, 'itemprop') && !covered) {
       results.push(finding('microdata-orphan-property', 'error', 'itemprop has no enclosing itemscope', element));
     }
     if (hasAttribute(element, 'itemref')) {
@@ -42,8 +58,13 @@ function checkAttributes({ elements }) {
 
 function checkItems({ items }) {
   const results = [];
-  for (const item of flattenItems(items)) {
-    if (item.truncated) {
+  const flattened = flattenItems(items);
+  const limited = flattened.find((item) => item.truncated === 'size');
+  if (limited) {
+    results.push(finding('microdata-size', 'error', 'Microdata exceeds the extraction limits', itemNode(limited)));
+  }
+  for (const item of flattened) {
+    if (item.truncated === 'depth') {
       results.push(finding('microdata-depth', 'error', `Items nest deeper than ${MAX_ITEM_DEPTH} levels`, itemNode(item)));
     }
     if (!item.types.some((type) => PRODUCT_TYPE.test(type))) {

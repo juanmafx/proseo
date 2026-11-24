@@ -1,6 +1,6 @@
 const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 const IMAGE_PATH = /^assets\/images\/[a-z0-9]+(?:-[a-z0-9]+)*\.(?:svg|png|webp|avif)$/;
-const CONTROL_CHARACTERS = /[\u0000-\u001f\u007f]/;
+const CONTROL_CHARACTERS = /[\u0000-\u001f\u007f-\u009f\u200e\u200f\u2028-\u202e\u2066-\u2069]/;
 
 export class CatalogError extends Error {
   constructor(issues) {

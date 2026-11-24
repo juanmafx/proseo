@@ -1,7 +1,13 @@
 import { readFile } from 'node:fs/promises';
-import { validateCatalog } from './validate.mjs';
+import { CatalogError, validateCatalog } from './validate.mjs';
 
 export async function loadCatalog(path) {
   const source = await readFile(path, 'utf8');
-  return validateCatalog(JSON.parse(source));
+  let catalog;
+  try {
+    catalog = JSON.parse(source);
+  } catch {
+    throw new CatalogError(['catalog is not valid JSON']);
+  }
+  return validateCatalog(catalog);
 }

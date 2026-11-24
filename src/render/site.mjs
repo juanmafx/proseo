@@ -1,11 +1,26 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { access, readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { loadCatalog } from '../catalog/load.mjs';
+import { CatalogError } from '../catalog/validate.mjs';
 import { renderPage } from './page.mjs';
 import { renderSitemap } from './sitemap.mjs';
 
+async function assertImagesExist(rootDirectory, { products }) {
+  const missing = [];
+  for (const { image } of products) {
+    const found = await access(join(rootDirectory, image)).then(() => true, () => false);
+    if (!found) {
+      missing.push(`image not found: ${image}`);
+    }
+  }
+  if (missing.length > 0) {
+    throw new CatalogError(missing);
+  }
+}
+
 export async function renderArtifacts(rootDirectory) {
   const catalog = await loadCatalog(join(rootDirectory, 'data', 'catalog.json'));
+  await assertImagesExist(rootDirectory, catalog);
   return new Map([
     ['index.html', renderPage(catalog)],
     ['sitemap.xml', renderSitemap(catalog)],
